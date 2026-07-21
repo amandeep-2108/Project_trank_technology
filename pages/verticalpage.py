@@ -53,7 +53,7 @@ class veriticalpage:
         self.c6 = page.locator('(//a[@href="https://www.tranktechnologies.com/custom-crm-development-company"])[1]')
         self.c7 = page.locator('(//a[@href="https://www.tranktechnologies.com/erp-app-development-company"])[1]' )
         self.c8 = page.locator('(//a[@href="https://www.tranktechnologies.com/e-learning-mobile-app-development-company"])[1]')
-        self.c9 = page.locator('(//a[@href="https://www.tranktechnologies.com/real-estate-mobile-app-development-company]')
+        self.c9 = page.locator('(//a[@href="https://www.tranktechnologies.com/real-estate-mobile-app-development-company"])[1]')
         # f2=page.locator('(//a[@href="https://www.tranktechnologies.com/cryptocurrency-mobile-app-development-company"])[1]')
 
         self.custom_list = [self.c1,self.c2,self.c3, self.c4,self.c5,self.c6,self.c7,self.c8,self.c9,]
@@ -67,20 +67,14 @@ class veriticalpage:
             i.click()
             self.page.wait_for_timeout(2000)
             self.page.go_back()
-
     def retail_submenu_clicking(self):
+     
         for i in self.ret_list:
-            self.vertical.hover()
-            self.ret.hover()
-            if i.is_visible():  #assertion
-               i.click()
-               self.page.wait_for_timeout(1000)
-               self.page.go_back()
-            else: 
-                 self.page.refresh()
-            self.page.wait_for_load_state("load")
-            self.page.go_back()
-
+         self.vertical.hover()
+         self.ret.hover()
+         i.click()
+         self.page.wait_for_load_state("load")
+         self.page.go_back()
     def healt_submenu_clicking(self):
         for i in self.health_list:
             self.vertical.hover()
